@@ -83,6 +83,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     WidgetsBinding.instance?.addObserver(this);
     //Check call when open app from terminated
     checkAndNavigationCallingPage();
+    getDevicePushTokenVoIP();
   }
 
   getCurrentCall() async {
@@ -154,6 +155,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Future<void> getDevicePushTokenVoIP() async {
     var devicePushTokenVoIP =
         await FlutterCallkitIncoming.getDevicePushTokenVoIP();
-    print(devicePushTokenVoIP);
+    print('tokenVoIP: $devicePushTokenVoIP');
   }
 }
